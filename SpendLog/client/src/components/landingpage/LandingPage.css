@@ -1,0 +1,58 @@
+.landingpageimg {
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+.centercontent {
+  display: flex;
+  gap: 13%;
+  align-items: center;
+  margin: 100px;
+  justify-content: center;
+}
+.firstline {
+  font-family: "Inter", sans-serif;
+  color: blueviolet;
+}
+.secondline {
+  font-family: "Inter", sans-serif;
+  color: blueviolet;
+  /* font-size: 20px; */
+  /* font-weight: 500; */
+}
+.deepdesc {
+  font-family: "Inter", sans-serif;
+  color: darkgray;
+}
+
+.registerbtn {
+  background: linear-gradient(135deg, #4fd1c5, #2baf90);
+  border: 1px solid black;
+  border-radius: 20px;
+  font-family: "Inter", sans-serif;
+  width: 50%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+.registerbtn .arrow-icon {
+  position: relative;
+  left: 5px;
+  transition: all 0.3s ease;
+}
+
+.registerbtn:hover {
+  background: linear-gradient(135deg, #2baf90, #4fd1c5);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.registerbtn:hover .arrow-icon {
+  left: 10px;
+}

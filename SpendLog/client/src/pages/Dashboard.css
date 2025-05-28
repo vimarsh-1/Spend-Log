@@ -1,0 +1,42 @@
+.Navbar {
+  width: 100%;
+  height: auto;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+}
+.Tabparentdiv {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.IncomeBtnTab {
+  font-family: "Inter", sans-serif;
+  font-size: x-large;
+  height: 180px;
+  width: 180px;
+  background: linear-gradient(#3eb489, #90ee90);
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  color: black;
+  cursor: pointer;
+}
+
+.welcomemsg{
+  font-family: "Inter", sans-serif;
+  margin-right: auto;
+  padding: 5px;
+  margin-left: 20px;
+  transition: 0.5s ease-in;
+  align-items: center;
+  display: flex;
+}
+.welcomemsg:hover{
+  color: blueviolet;
+  transition: 0.5s ease;
+}
