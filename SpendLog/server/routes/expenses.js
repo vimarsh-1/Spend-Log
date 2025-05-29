@@ -11,8 +11,8 @@ router.get('/', auth, async (req, res) => {
 
 // POST new expense
 router.post('/', auth, async (req, res) => {
-  const { title, amount, category, date } = req.body;
-  const newExpense = new Expense({ userId: req.userId, title, amount, category, date });
+  const { title, amount, category, date, description } = req.body;
+  const newExpense = new Expense({ userId: req.userId, title, amount, category, date, description });
   await newExpense.save();
   res.status(201).json(newExpense);
 });

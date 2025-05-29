@@ -11,8 +11,15 @@ router.get("/", auth, async (req, res) => {
 
 // POST new expense
 router.post("/", auth, async (req, res) => {
-  const { title, amount } = req.body;
-  const newIncome = new Income({ userId: req.userId, title, amount });
+  const { title, amount, date, description, category } = req.body;
+  const newIncome = new Income({
+    userId: req.userId,
+    title,
+    amount,
+    date,
+    category,
+    description,
+  });
   await newIncome.save();
   res.status(201).json(newIncome);
 });

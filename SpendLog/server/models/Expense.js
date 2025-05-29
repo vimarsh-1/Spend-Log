@@ -9,8 +9,9 @@ const ExpenseSchema = new mongoose.Schema(
     },
     title: { type: String, required: true },
     amount: { type: Number, required: true },
-    category: { type: String, default: "Other" },
-    date: { type: Date, default: Date.now },
+    date: { type: Date, default: Date.now, required: true },
+    category: { type: String, default: "others💰" },
+    description: { type: String, required: true },
   },
   { timestamps: true }
 );
