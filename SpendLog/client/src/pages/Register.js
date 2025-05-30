@@ -9,10 +9,21 @@ import Login from "./Login";
 const Register = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [isLogin, setIsLogin] = useState(false);
-  // const navigate = useNavigate();
+  const isFormValid = form.name && form.email && form.password;
 
+  const isValidPassword = (password) => {
+    const regex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    return regex.test(password);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!isValidPassword(form.password)) {
+      alert("Please set strong password to your account !🔑");
+      return;
+    }
     try {
       await API.post("/auth/register", form);
       alert("Registered successfully. Now login.");
@@ -48,6 +59,7 @@ const Register = () => {
             <input
               placeholder="Email"
               className="registerinputfields"
+              type="email"
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               required
             />
@@ -63,7 +75,11 @@ const Register = () => {
               required
             />{" "}
             <br />
-            <button type="submit" className="registerbtn">
+            <button
+              type="submit"
+              className={`registerbtn ${!isFormValid ? "disabled-btn" : ""}`}
+              disabled={!isFormValid}
+            >
               Register
               <img src={ArrowCircle} className="arrow-icon" alt="" />
             </button>

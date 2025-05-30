@@ -39,7 +39,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  transform: scale(1);
+  /* transform: scale(1); */
 }
 .registerbtn .arrow-icon {
   position: relative;
@@ -49,10 +49,38 @@
 
 .registerbtn:hover {
   background: linear-gradient(135deg, #2baf90, #4fd1c5);
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .registerbtn:hover .arrow-icon {
   left: 10px;
+}
+.registerbtn:disabled .arrow-icon {
+  left: 5px;
+}
+
+/*responsivness*/
+@media (max-width: 768px) {
+  .centercontent{
+    flex-direction: column;
+    margin: auto;
+    padding: 40px;
+  }
+  .registerbtn{
+    width: auto;
+    position: relative;
+    top: 10px;
+  }
+  .landingpageimg{
+    width: 100%;
+    position: relative;
+    top: 30px;
+  }
+  .deepdesc{
+    text-align: justify;
+  }
+  .firstline{
+    width: 112%;
+  }
 }

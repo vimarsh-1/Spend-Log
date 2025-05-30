@@ -27,6 +27,12 @@
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .IncomeBtnTab {
+    width:auto !important;
+  }
+}
+
 .welcomemsg{
   font-family: "Inter", sans-serif;
   margin-right: auto;
@@ -39,4 +45,9 @@
 .welcomemsg:hover{
   color: blueviolet;
   transition: 0.5s ease;
+}
+@media (max-width: 768px){
+  .Tabparentdiv{
+    flex-direction: column;
+  }
 }

@@ -1,0 +1,28 @@
+.Navbarparent{
+    position: relative;
+    left: 60px;
+}
+.Navbarimglogo{
+    width: 5%;
+    height: 2%;
+    position: relative;
+    left: 10px;
+}
+@media (max-width: 768px) {
+    .registerbtn{
+        position: relative;
+        right: 0;
+        left: 0;
+    }
+    .Navbarimglogo{
+        width: 13%;
+        height: 100%;
+        position: relative;
+        left: 7px;
+    }
+    .Navbarparent{
+        left: 0;
+        display: flex;
+        justify-content:space-between;
+    }
+}

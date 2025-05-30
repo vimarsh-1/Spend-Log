@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 import { useAuth } from "../context/AuthContext";
 import ArrowCircle from "../Assets/ArrowCircle.svg";
@@ -8,6 +8,7 @@ const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const { login } = useAuth();
   const navigate = useNavigate();
+  const isFormValid = form.email && form.password;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +34,7 @@ const Login = () => {
             placeholder="Email"
             className="registerinputfields"
             type="email"
-            style={{width:'auto'}}
+            style={{ width: "auto" }}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             required
           />
@@ -45,7 +46,7 @@ const Login = () => {
             type="password"
             className="registerinputfields"
             placeholder="Password"
-            style={{width:'auto'}}
+            style={{ width: "auto" }}
             onChange={(e) => setForm({ ...form, password: e.target.value })}
             required
           />{" "}
@@ -53,7 +54,8 @@ const Login = () => {
           <button
             type="submit"
             style={{ width: "auto" }}
-            className="registerbtn"
+            className={`registerbtn ${!isFormValid ? "disabled-btn" : ""}`}
+            disabled={!isFormValid}
           >
             Login
             <img src={ArrowCircle} className="arrow-icon" alt="" />
