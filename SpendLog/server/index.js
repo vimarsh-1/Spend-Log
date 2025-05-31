@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-const userRoutes = require('./routes/user');
+const userRoutes = require("./routes/user");
 
 const app = express();
 app.use(cors());
@@ -10,9 +10,13 @@ app.use(express.json());
 
 // Routes
 app.use("/api/auth", require("./routes/auth"));
-app.use('/api/users', userRoutes);
+app.use("/api/users", userRoutes);
 app.use("/api/expenses", require("./routes/expenses"));
 app.use("/api/incomes", require("./routes/incomespage"));
+
+app.get("/", (req, res) => {
+  res.send("SpendLog API is running.");
+});
 
 // Connect to DB and start server
 const PORT = process.env.PORT || 5000;
