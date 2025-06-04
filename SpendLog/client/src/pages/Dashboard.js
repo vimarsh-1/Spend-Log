@@ -134,6 +134,7 @@ const Dashboard = () => {
               position: "relative",
               right: "20px",
               margin: "5px",
+              top:'-2px'
             }}
           >
             Logout

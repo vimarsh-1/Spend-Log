@@ -61,4 +61,11 @@
   .gifdiv{
     display: none;
   }
+  .registeruserform{
+    height: 92vh;
+    width: 85%;
+  }
+  .registerinputfields{
+    width: 80%;
+  }
 }

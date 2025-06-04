@@ -30,6 +30,7 @@
 @media (max-width: 768px) {
   .IncomeBtnTab {
     width:auto !important;
+    padding: 30px;
   }
 }
 
